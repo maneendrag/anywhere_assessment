@@ -26,7 +26,7 @@ class LandingDetailsScreen extends StatelessWidget {
               fit: BoxFit.contain,
             )
           : Image.network(
-              "https://duckduckgo.com/i/99b04638.png",
+              relatedTopicsData.icon!.uRL!,
               height: MediaQuery.of(context).size.width / 3,
               width: MediaQuery.of(context).size.width / 3,
               fit: BoxFit.contain,

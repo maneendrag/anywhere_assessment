@@ -18,7 +18,7 @@ class LandingScreenViewModel extends BaseViewModel{
 
   TextEditingController editingController = TextEditingController();
 
-  final List<String> duplicateItems = [];
+   List<String> duplicateItems = [];
   List<RelatedTopics> relatedTopicsList = [];
   List<String> items = [];
 
@@ -28,11 +28,16 @@ class LandingScreenViewModel extends BaseViewModel{
   int currentIndex = 0;
   String? useURL;
 
-  void checkFlavor() async{
+  late MethodChannel _methodChannel; // The actual method channel used by your class
+
+  set methodChannel(MethodChannel channel) {
+    _methodChannel = channel;
+  }
+
+  checkFlavor() async{
+
     String? flavor = await const MethodChannel('flavor')
         .invokeMethod<String>('getFlavor');
-
-    print("flavour found id -----> $flavor");
 
     currentFlavor = flavor;
 
@@ -46,7 +51,7 @@ class LandingScreenViewModel extends BaseViewModel{
   }
 
   void filterSearchResults(String query) {
-    print("Entered search");
+
     try{
       items = duplicateItems
           .where((item) => item.toLowerCase().contains(query.toLowerCase())).cast<String>()
@@ -83,7 +88,7 @@ class LandingScreenViewModel extends BaseViewModel{
 
 
     }catch(e){
-      print("WhTA THE EXCEPTION ====> $e");
+      print("EXCEPTION ====> $e");
     }
   }
 
