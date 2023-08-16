@@ -1,15 +1,7 @@
-
-import 'dart:async';
-
 import 'package:checkscheme/_app/app.locator.dart';
 import 'package:checkscheme/screens/landing/landing_screen_viewmodel.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
-import 'package:mockito/mockito.dart';
 
-import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   setupLocator();
